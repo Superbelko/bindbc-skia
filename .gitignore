@@ -1,0 +1,17 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/bindbc-skia
+bindbc-skia.so
+bindbc-skia.dylib
+bindbc-skia.dll
+bindbc-skia.a
+bindbc-skia.lib
+bindbc-skia-test-*
+*.exe
+*.o
+*.obj
+*.lst
+dub.selections.json
+lib

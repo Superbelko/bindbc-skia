@@ -1,0 +1,50 @@
+{
+	"authors": [
+		"Superbelko"
+	],
+	"copyright": "Copyright © 2021, Superbelko",
+	
+	"description": "Dynamic and static bindings to Skia c API, compatible with -betterC, @nogc, and nothrow.",
+	"license": "BSL-1.0",
+	"name": "bindbc-skia",
+
+	"targetType": "staticLibrary",
+	"targetPath": "lib",
+	"targetName": "BindBC_Skia",
+
+	"configurations": [
+		{
+			"name" : "dynamic",
+			"versions": [ "BindSkia_Dynamic" ],
+			"dependencies": {
+				"bindbc-loader": "~>0.3.0"
+			}
+		},
+
+		{
+			"name" : "dynamicBC",
+			"versions": [ "BindSkia_Dynamic" ],
+			"dependencies": {
+				"bindbc-loader": "~>0.3.0"
+			},
+			"subConfigurations": {
+				"bindbc-loader": "yesBC"
+			},
+			"dflags": [ "-betterC" ]
+		},
+
+		{
+			"name" : "static",
+			"versions": [ "BindSkia_Static" ],
+			"excludedSourceFiles": [ "source/bindbc/skia/binddynamic.d" ]
+		},
+
+		{
+			"name" : "staticBC",
+			"versions": [ "BindSkia_Static" ],
+			"excludedSourceFiles": [ "source/bindbc/skia/binddynamic.d" ],
+			"dflags": [ "-betterC" ]
+		}
+	]
+
+}
